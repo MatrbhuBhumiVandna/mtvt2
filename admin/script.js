@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Image Upload Preview
+    // Image Upload Preview with Cropping
     const heroImageInput = document.getElementById('heroImage');
     if (heroImageInput) {
         heroImageInput.addEventListener('change', function(e) {
@@ -60,8 +60,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     const preview = document.getElementById('heroPreview');
                     preview.innerHTML = `<img src="${event.target.result}" alt="Preview">`;
                     
-                    // Show crop tools (simplified for this example)
-                    document.querySelector('.crop-tools').style.display = 'block';
+                    // Show crop tools
+                    const cropTools = document.querySelector('.crop-tools');
+                    cropTools.style.display = 'block';
+                    
+                    // Initialize cropper (simplified example)
+                    const img = preview.querySelector('img');
+                    img.onload = function() {
+                        // In a real implementation, you would initialize a cropper library here
+                        console.log('Image loaded, ready for cropping');
+                    };
+                    
+                    // Crop button functionality
+                    document.querySelector('.crop-btn').addEventListener('click', function() {
+                        alert('In a complete implementation, this would crop the image');
+                        cropTools.style.display = 'none';
+                    });
+                    
+                    // Cancel button functionality
+                    document.querySelector('.cancel-btn').addEventListener('click', function() {
+                        preview.innerHTML = '';
+                        heroImageInput.value = '';
+                        cropTools.style.display = 'none';
+                    });
                 }
                 reader.readAsDataURL(file);
             }
@@ -72,7 +93,50 @@ document.addEventListener('DOMContentLoaded', function() {
     const addEventBtn = document.querySelector('.add-event-btn');
     if (addEventBtn) {
         addEventBtn.addEventListener('click', function() {
-            alert('In a complete implementation, this would open a form to add a new event');
+            // Create modal for adding new event
+            const modal = document.createElement('div');
+            modal.className = 'admin-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h3>Add New Event</h3>
+                    <form id="newEventForm">
+                        <div class="form-group">
+                            <label>Event Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Event Date</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Event Description</label>
+                            <textarea required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Event Image</label>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="modal-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="save-btn">Save Event</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Close modal when clicking cancel
+            modal.querySelector('.cancel-btn').addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            // Handle form submission
+            modal.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('In a complete implementation, this would save the new event');
+                document.body.removeChild(modal);
+            });
         });
     }
     
@@ -88,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         cancelUploadBtn.addEventListener('click', function() {
             imageUploadModal.style.display = 'none';
+            document.querySelector('.upload-preview').innerHTML = '';
         });
     }
     
@@ -126,15 +191,67 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmUploadBtn = document.querySelector('.confirm-upload');
     if (confirmUploadBtn) {
         confirmUploadBtn.addEventListener('click', function() {
-            alert('In a complete implementation, this would upload the selected images to the server');
-            imageUploadModal.style.display = 'none';
+            // In a real implementation, this would upload to server
+            const previewItems = document.querySelectorAll('.preview-item');
+            if (previewItems.length > 0) {
+                alert(`${previewItems.length} images would be uploaded to the server`);
+                imageUploadModal.style.display = 'none';
+                document.querySelector('.upload-preview').innerHTML = '';
+            } else {
+                alert('Please select images to upload');
+            }
         });
     }
     
     // Edit and Delete buttons in tables
     document.querySelectorAll('.edit-btn').forEach(btn => {
         btn.addEventListener('click', function() {
-            alert('Edit functionality would be implemented here');
+            const row = this.closest('tr');
+            const cells = row.querySelectorAll('td');
+            
+            // Create modal for editing
+            const modal = document.createElement('div');
+            modal.className = 'admin-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h3>Edit Event</h3>
+                    <form id="editEventForm">
+                        <div class="form-group">
+                            <label>Event Name</label>
+                            <input type="text" value="${cells[0].textContent}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Event Date</label>
+                            <input type="text" value="${cells[1].textContent}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select>
+                                <option ${cells[2].querySelector('.upcoming') ? 'selected' : ''}>Upcoming</option>
+                                <option ${cells[2].querySelector('.completed') ? 'selected' : ''}>Completed</option>
+                            </select>
+                        </div>
+                        <div class="modal-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="save-btn">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Close modal when clicking cancel
+            modal.querySelector('.cancel-btn').addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            // Handle form submission
+            modal.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('In a complete implementation, this would save the changes');
+                document.body.removeChild(modal);
+            });
         });
     });
     
@@ -143,6 +260,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (confirm('Are you sure you want to delete this item?')) {
                 this.closest('tr').remove();
             }
+        });
+    });
+    
+    // Content Save Functionality
+    const saveButtons = document.querySelectorAll('.save-btn');
+    saveButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('Content changes would be saved to the database');
+            // In a real implementation, this would send data to server
         });
     });
 });
