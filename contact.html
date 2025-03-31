@@ -1,84 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Matru Bhumi Vandana Trust</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-</head>
-<body>
-    <!-- Header -->
-    <?php include 'includes/header.html'; ?>
-    
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
+<!--#include virtual="includes/header.html" -->
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
                 <p>Get in touch with Matru Bhumi Vandana Trust</p>
             </div>
-            
-            <div class="contact-container">
-                <div class="contact-info-box">
-                    <h3>Our Address</h3>
-                    <div class="contact-details">
-                        <div class="contact-detail">
+        </section>
+        
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 class="section-title">Our Information</h2>
+                        
+                        <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Matrubhumi Vandana Trust-Morbi, Shop No.57, Capital Market, Beside ICICI Bank, Rawapar Chowk, Morbi, Gujarat</span>
+                            <div>
+                                <h3>Address</h3>
+                                <p>Matrubhumi Vandana Trust-Morbi,<br>
+                                Shop No.57, Capital Market,<br>
+                                Beside ICICI Bank, Rawapar Chowk,<br>
+                                Morbi, Gujarat - 363641</p>
+                            </div>
                         </div>
-                        <div class="contact-detail">
+                        
+                        <div class="info-item">
                             <i class="fas fa-phone"></i>
-                            <span><a href="tel:+919429912689">+91 94299 12689</a>, <a href="tel:+919429912489">+91 94299 12489</a></span>
+                            <div>
+                                <h3>Phone Numbers</h3>
+                                <p><a href="tel:+919429912689">+91 94299 12689</a></p>
+                                <p><a href="tel:+919429912489">+91 94299 12489</a></p>
+                            </div>
                         </div>
-                        <div class="contact-detail">
+                        
+                        <div class="info-item">
                             <i class="fas fa-envelope"></i>
-                            <span>info@matrubhumi.org (example)</span>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@matrubhumi.org">info@matrubhumi.org</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Office Hours</h3>
+                                <p>Monday to Saturday: 9:00 AM to 6:00 PM</p>
+                                <p>Sunday: 10:00 AM to 2:00 PM</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <h3 style="margin-top: 30px;">Connect With Us</h3>
-                    <div class="social-contact">
-                        <a href="https://www.facebook.com/profile.php?id=61558235197338" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/matrubhumi_official/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <div class="contact-form">
+                        <h2 class="section-title">Send Us a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select Subject</option>
+                                    <option value="donation">Donation Inquiry</option>
+                                    <option value="event">Event Information</option>
+                                    <option value="volunteer">Volunteer Opportunity</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Send Message</button>
+                        </form>
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.041440783347!2d70.8232683150119!3d22.35398598530204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca248c77c099%3A0xdf5ac10af64ac8ee!2sICICI%20Bank%20ATM!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            
-            <div class="map-container" style="margin-top: 50px;">
-                <h3 style="text-align: center; margin-bottom: 20px;">Our Location</h3>
-                <div style="width: 100%; height: 400px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                    <p>Google Map will be embedded here showing the trust location</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <?php include 'includes/footer.html'; ?>
-</body>
-</html>
+        </section>
+    </main>
+
+<!--#include virtual="includes/footer.html" -->
