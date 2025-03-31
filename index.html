@@ -7,12 +7,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    
+    <!-- Load header and footer using JavaScript -->
+    <script>
+        // Function to load HTML files
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                    
+                    // Re-attach event listeners after loading
+                    if(filePath.includes('header.html')) {
+                        const menuToggle = document.getElementById('mobile-menu');
+                        const navList = document.querySelector('.nav-list');
+                        
+                        if(menuToggle && navList) {
+                            menuToggle.addEventListener('click', function() {
+                                this.classList.toggle('active');
+                                navList.classList.toggle('active');
+                                document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
+                            });
+                        }
+                    }
+                    
+                    // Load scripts after footer is loaded
+                    if(filePath.includes('footer.html')) {
+                        const script1 = document.createElement('script');
+                        script1.src = 'assets/js/main.js';
+                        document.body.appendChild(script1);
+                        
+                        const script2 = document.createElement('script');
+                        script2.src = 'assets/js/countdown.js';
+                        document.body.appendChild(script2);
+                    }
+                })
+                .catch(err => console.error('Error loading HTML:', err));
+        }
+        
+        // Load header and footer when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHTML('header-container', 'includes/header.html');
+            loadHTML('footer-container', 'includes/footer.html');
+        });
+    </script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include 'includes/header.html'; ?>
-    
-    <!-- Hero Section -->
+    <!-- Header will be loaded here -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
     <section class="hero">
         <div class="container">
             <div class="hero-content slide-up">
@@ -22,7 +66,6 @@
         </div>
     </section>
     
-    <!-- Countdown Section -->
     <section class="countdown-section">
         <div class="container">
             <h2>Janta Raja Natak 2025</h2>
@@ -49,7 +92,6 @@
         </div>
     </section>
     
-    <!-- Patriots Section -->
     <section class="patriots-section">
         <div class="container">
             <div class="section-title">
@@ -57,10 +99,9 @@
             </div>
             
             <div class="patriots-grid">
-                <!-- Patriot 1 -->
                 <div class="patriot-card">
                     <div class="patriot-img">
-                        <img src="assets/images/patriots/patriot1.jpg" alt="Patriot Name">
+                        <img src="assets/images/patriots/shivaji-maharaj.jpg" alt="Shivaji Maharaj">
                     </div>
                     <div class="patriot-info">
                         <h3>Shivaji Maharaj</h3>
@@ -68,10 +109,9 @@
                     </div>
                 </div>
                 
-                <!-- Patriot 2 -->
                 <div class="patriot-card">
                     <div class="patriot-img">
-                        <img src="assets/images/patriots/patriot2.jpg" alt="Patriot Name">
+                        <img src="assets/images/patriots/rani-lakshmibai.jpg" alt="Rani Lakshmibai">
                     </div>
                     <div class="patriot-info">
                         <h3>Rani Lakshmibai</h3>
@@ -79,23 +119,22 @@
                     </div>
                 </div>
                 
-                <!-- Patriot 3 -->
                 <div class="patriot-card">
                     <div class="patriot-img">
-                        <img src="assets/images/patriots/patriot3.jpg" alt="Patriot Name">
+                        <img src="assets/images/patriots/bhagat-singh.jpg" alt="Bhagat Singh">
                     </div>
                     <div class="patriot-info">
                         <h3>Bhagat Singh</h3>
                         <p>Revolutionary freedom fighter who sacrificed his life for India's independence</p>
                     </div>
                 </div>
-                
-                <!-- Add more patriots as needed -->
             </div>
         </div>
     </section>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer-container"></div>
     
-    <!-- Footer -->
-    <?php include 'includes/footer.html'; ?>
+    <!-- Donation Sticky Button (loaded with footer) -->
 </body>
 </html>
