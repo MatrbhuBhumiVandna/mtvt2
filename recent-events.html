@@ -1,96 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recent Events - Matru Bhumi Vandana Trust</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-</head>
-<body>
-    <!-- Header -->
-    <?php include 'includes/header.html'; ?>
-    
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Recent Events</h2>
-                <p>Relive the moments from our past events and programs</p>
+<!--#include virtual="includes/header.html" -->
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Recent Events</h1>
+                <p>Our past activities and celebrations</p>
             </div>
-            
-            <div class="gallery-grid">
-                <!-- Event 1 -->
-                <div class="gallery-item">
-                    <img src="assets/images/events/recent1.jpg" alt="Recent Event" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Republic Day Celebration 2024</h3>
-                        <p>Celebrated with patriotic fervor and cultural programs</p>
+        </section>
+        
+        <section class="recent-events-section">
+            <div class="container">
+                <article class="event-article">
+                    <div class="event-image">
+                        <img src="assets/images/events/recent1.jpg" alt="Recent Event 1">
                     </div>
-                </div>
+                    <div class="event-content">
+                        <h2>Janta Raja Natak 2019</h2>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> 15th March 2019</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Morbi, Gujarat</span>
+                        </div>
+                        <p>The Janta Raja Natak in 2019 was a grand success, attracting over 5,000 attendees across 7 days. The historical play depicted the life and struggles of Chhatrapati Shivaji Maharaj, inspiring patriotism and cultural pride among the audience. The event raised significant funds for the temple construction and helped spread awareness about our mission.</p>
+                        <a href="#" class="btn-secondary">View Gallery</a>
+                    </div>
+                </article>
                 
-                <!-- Event 2 -->
-                <div class="gallery-item">
-                    <img src="assets/images/events/recent2.jpg" alt="Recent Event" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Gurukul Annual Day</h3>
-                        <p>Students showcased their Vedic knowledge and skills</p>
+                <article class="event-article">
+                    <div class="event-image">
+                        <img src="assets/images/events/recent2.jpg" alt="Recent Event 2">
                     </div>
-                </div>
+                    <div class="event-content">
+                        <h2>Annual Patriot's Day 2023</h2>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> 23rd March 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Matru Bhumi Vandana Trust</span>
+                        </div>
+                        <p>Our annual celebration to honor Indian patriots featured speeches by renowned historians, cultural performances, and an exhibition showcasing the freedom struggle. Over 1,200 students from local schools participated in various competitions including essay writing, poetry recitation, and patriotic song competitions.</p>
+                        <a href="#" class="btn-secondary">View Gallery</a>
+                    </div>
+                </article>
                 
-                <!-- Event 3 -->
-                <div class="gallery-item">
-                    <img src="assets/images/events/recent3.jpg" alt="Recent Event" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Bharat Mata Poojan</h3>
-                        <p>Special prayers and rituals for our motherland</p>
+                <article class="event-article">
+                    <div class="event-image">
+                        <img src="assets/images/events/recent3.jpg" alt="Recent Event 3">
                     </div>
-                </div>
+                    <div class="event-content">
+                        <h2>Gurukul Inauguration Ceremony</h2>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> 12th January 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Trust Premises</span>
+                        </div>
+                        <p>The foundation stone for our modern Gurukul was laid in a grand ceremony attended by spiritual leaders, educators, and local dignitaries. The event included Vedic rituals, cultural programs by students, and presentations about the Gurukul curriculum that blends traditional knowledge with modern education.</p>
+                        <a href="#" class="btn-secondary">View Gallery</a>
+                    </div>
+                </article>
                 
-                <!-- Event 4 -->
-                <div class="gallery-item">
-                    <img src="assets/images/events/recent4.jpg" alt="Recent Event" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Yoga Camp</h3>
-                        <p>Promoting health and wellness through ancient practices</p>
-                    </div>
-                </div>
-                
-                <!-- Event 5 -->
-                <div class="gallery-item">
-                    <img src="assets/images/events/recent5.jpg" alt="Recent Event" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Vedic Mathematics Workshop</h3>
-                        <p>Teaching ancient mathematical techniques to students</p>
-                    </div>
-                </div>
-                
-                <!-- Event 6 -->
-                <div class="gallery-item">
-                    <img src="assets/images/events/recent6.jpg" alt="Recent Event" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Patriots Memorial Lecture</h3>
-                        <p>Remembering the sacrifices of our freedom fighters</p>
-                    </div>
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">Next <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
-            
-            <div class="event-blogs">
-                <div class="event-blog">
-                    <h3>Republic Day Celebration 2024</h3>
-                    <p>Our Republic Day celebration was a grand success with participation from over 500 community members. The event featured patriotic songs, cultural performances by Gurukul students, and a special lecture on the importance of the Indian Constitution. The highlight was the reenactment of historic moments from India's freedom struggle by our youth volunteers.</p>
-                </div>
-                
-                <div class="event-blog">
-                    <h3>Gurukul Annual Day 2023</h3>
-                    <p>The Gurukul Annual Day showcased the remarkable progress of our students in both traditional Vedic education and modern subjects. Students demonstrated their proficiency in Sanskrit shlokas, Vedic mathematics, yoga, and classical arts. The event also featured an exhibition of projects blending ancient wisdom with modern technology, reflecting our unique educational approach.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <?php include 'includes/footer.html'; ?>
-</body>
-</html>
+        </section>
+    </main>
+
+<!--#include virtual="includes/footer.html" -->
