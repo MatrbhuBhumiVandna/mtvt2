@@ -43,4 +43,177 @@
                 <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
             </ul>
             <div class="sidebar-footer">
-                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></
+                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="hamburger" id="adminHamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="user-profile">
+                    <span>Welcome, Admin</span>
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-area" id="contentArea">
+                <section id="dashboardSection">
+                    <h2 class="section-title">Dashboard Overview</h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Website Visitors</h3>
+                                <p>1,245</p>
+                                <span class="stat-change up">+12% this week</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-donate"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Total Donations</h3>
+                                <p>₹1,87,500</p>
+                                <span class="stat-change up">+25% this month</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Event Tickets Sold</h3>
+                                <p>342</p>
+                                <span class="stat-change down">-5% this week</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>New Messages</h3>
+                                <p>28</p>
+                                <span class="stat-change up">+40% this week</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <ul class="activity-list">
+                            <li>
+                                <i class="fas fa-edit"></i>
+                                <span>You updated the Home page content - 2 hours ago</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-image"></i>
+                                <span>New images added to gallery - 5 hours ago</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-donate"></i>
+                                <span>New donation received (₹5,000) - 1 day ago</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-ticket-alt"></i>
+                                <span>10 tickets booked for Janta Raja Natak - 2 days ago</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="contentSection" style="display: none;">
+                    <h2 class="section-title">Content Management</h2>
+                    
+                    <div class="content-tabs">
+                        <button class="tab-btn active" data-tab="pages">Pages</button>
+                        <button class="tab-btn" data-tab="sections">Sections</button>
+                        <button class="tab-btn" data-tab="seo">SEO Settings</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="pagesTab">
+                        <div class="page-list">
+                            <div class="page-item">
+                                <h3>Home Page</h3>
+                                <p>Main landing page of the website</p>
+                                <div class="page-actions">
+                                    <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="page-item">
+                                <h3>About Us</h3>
+                                <p>Information about the trust and its mission</p>
+                                <div class="page-actions">
+                                    <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                                </div>
+                            </div>
+                            
+                            <!-- More page items -->
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="sectionsTab" style="display: none;">
+                        <div class="section-editor">
+                            <div class="editor-sidebar">
+                                <h4>Available Sections</h4>
+                                <ul class="section-list">
+                                    <li class="active">Home Hero</li>
+                                    <li>Countdown</li>
+                                    <li>Patriots Showcase</li>
+                                    <li>Mission Statement</li>
+                                    <li>Event Details</li>
+                                </ul>
+                            </div>
+                            <div class="editor-main">
+                                <h3>Edit Section: Home Hero</h3>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" value="World's Biggest Temple of Bharat Mata">
+                                </div>
+                                <div class="form-group">
+                                    <label>Subtitle</label>
+                                    <input type="text" value="Under the 'Matru Bhumi Vandna Trust' - Coming Soon">
+                                </div>
+                                <div class="form-group">
+                                    <label>Background Image</label>
+                                    <div class="image-upload">
+                                        <div class="image-preview">
+                                            <img src="../assets/images/hero-bg.jpg" alt="Current Background">
+                                        </div>
+                                        <input type="file" id="bgUpload" accept="image/*">
+                                        <label for="bgUpload" class="btn-upload">Change Image</label>
+                                        <div class="image-crop-tool" style="display: none;">
+                                            <!-- Image crop interface would go here -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn-save">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- More sections for Events, Gallery, etc. -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
