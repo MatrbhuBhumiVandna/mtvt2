@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Matru Bhumi Vandana Trust</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Matru Bhumi Admin Panel</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="admin-container">
-        <!-- Login Form (shown by default) -->
-        <div class="login-form" id="loginForm">
-            <div class="login-logo">
-                <img src="../assets/images/logo.png" alt="Matru Bhumi Vandana Trust Logo">
-                <h2>Admin Login</h2>
+    <div class="login-container" id="loginContainer">
+        <div class="login-box">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Matru Bhumi Logo">
+                <h2>MATRU BHUMI ADMIN</h2>
             </div>
             <form id="loginForm">
                 <div class="form-group">
@@ -24,213 +23,24 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit" class="login-btn">Login</button>
+                <button type="submit" class="btn-login">Login</button>
             </form>
-        </div>
-        
-        <!-- Admin Dashboard (hidden by default) -->
-        <div class="admin-dashboard" id="adminDashboard" style="display: none;">
-            <div class="admin-sidebar">
-                <div class="sidebar-header">
-                    <img src="../assets/images/logo.png" alt="Matru Bhumi Vandana Trust Logo">
-                    <h3>Admin Panel</h3>
-                </div>
-                <ul class="sidebar-menu">
-                    <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="#content"><i class="fas fa-edit"></i> Content Management</a></li>
-                    <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events Management</a></li>
-                    <li><a href="#gallery"><i class="fas fa-images"></i> Gallery Management</a></li>
-                    <li><a href="#donations"><i class="fas fa-donate"></i> Donations</a></li>
-                    <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
-                </ul>
-                <div class="sidebar-footer">
-                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </div>
-            </div>
-            
-            <div class="admin-content">
-                <div class="content-header">
-                    <h2>Dashboard</h2>
-                    <div class="user-info">
-                        <span>Welcome, Admin</span>
-                        <div class="user-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="content-body">
-                    <!-- Dashboard Widgets -->
-                    <div class="dashboard-widgets">
-                        <div class="widget">
-                            <div class="widget-icon" style="background-color: #5e2c04;">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <div class="widget-info">
-                                <h3>Page Views</h3>
-                                <p>1,245</p>
-                            </div>
-                        </div>
-                        
-                        <div class="widget">
-                            <div class="widget-icon" style="background-color: #800020;">
-                                <i class="fas fa-calendar-check"></i>
-                            </div>
-                            <div class="widget-info">
-                                <h3>Upcoming Events</h3>
-                                <p>3</p>
-                            </div>
-                        </div>
-                        
-                        <div class="widget">
-                            <div class="widget-icon" style="background-color: #d4a76a;">
-                                <i class="fas fa-donate"></i>
-                            </div>
-                            <div class="widget-info">
-                                <h3>Recent Donations</h3>
-                                <p>₹52,340</p>
-                            </div>
-                        </div>
-                        
-                        <div class="widget">
-                            <div class="widget-icon" style="background-color: #5e2c04;">
-                                <i class="fas fa-image"></i>
-                            </div>
-                            <div class="widget-info">
-                                <h3>Gallery Images</h3>
-                                <p>48</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Content Management Section -->
-                    <div class="content-section" id="contentManagement">
-                        <h3>Content Management</h3>
-                        <div class="content-editor">
-                            <div class="editor-tabs">
-                                <button class="tab-btn active" data-tab="home">Home Page</button>
-                                <button class="tab-btn" data-tab="about">About Us</button>
-                                <button class="tab-btn" data-tab="who-we-are">Who We Are</button>
-                                <button class="tab-btn" data-tab="contact">Contact Us</button>
-                            </div>
-                            
-                            <div class="editor-content">
-                                <div class="tab-pane active" id="home-tab">
-                                    <div class="form-group">
-                                        <label>Hero Title</label>
-                                        <input type="text" value="World's Largest Temple of Bharat Mata">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Hero Subtitle</label>
-                                        <input type="text" value="Under the 'Matru Bhumi Vandna Trust' - Coming Soon in Morbi, Gujarat">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Hero Background Image</label>
-                                        <div class="image-upload">
-                                            <input type="file" id="heroImage" accept="image/*">
-                                            <label for="heroImage" class="upload-btn">Choose Image</label>
-                                            <div class="image-preview" id="heroPreview"></div>
-                                            <div class="crop-tools" style="display: none;">
-                                                <button class="crop-btn">Crop</button>
-                                                <button class="cancel-btn">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="tab-pane" id="about-tab" style="display: none;">
-                                    <!-- About page content fields -->
-                                </div>
-                                
-                                <!-- Other tabs content -->
-                            </div>
-                            
-                            <div class="editor-actions">
-                                <button class="save-btn">Save Changes</button>
-                                <button class="reset-btn">Reset</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Events Management Section -->
-                    <div class="content-section" id="eventsManagement">
-                        <h3>Events Management</h3>
-                        <div class="events-toolbar">
-                            <button class="add-event-btn">Add New Event</button>
-                        </div>
-                        
-                        <table class="events-table">
-                            <thead>
-                                <tr>
-                                    <th>Event Name</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Janta Raja Natak 2025</td>
-                                    <td>02-08 May 2025</td>
-                                    <td><span class="status upcoming">Upcoming</span></td>
-                                    <td>
-                                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                                        <button class="delete-btn"><i class="fas fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Republic Day Celebration</td>
-                                    <td>26 Jan 2024</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                    <td>
-                                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                                        <button class="delete-btn"><i class="fas fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <!-- Gallery Management Section -->
-                    <div class="content-section" id="galleryManagement">
-                        <h3>Gallery Management</h3>
-                        <div class="gallery-toolbar">
-                            <button class="add-image-btn">Add New Images</button>
-                            <select class="gallery-category">
-                                <option>All Categories</option>
-                                <option>Events</option>
-                                <option>Temple Construction</option>
-                                <option>Gurukul</option>
-                            </select>
-                        </div>
-                        
-                        <div class="gallery-grid">
-                            <!-- Gallery items will be loaded here -->
-                        </div>
-                        
-                        <div class="image-upload-modal" style="display: none;">
-                            <div class="modal-content">
-                                <h4>Upload New Images</h4>
-                                <div class="upload-area">
-                                    <input type="file" id="galleryUpload" multiple accept="image/*">
-                                    <label for="galleryUpload" class="upload-label">
-                                        <i class="fas fa-cloud-upload-alt"></i>
-                                        <p>Drag & drop images here or click to browse</p>
-                                    </label>
-                                </div>
-                                <div class="upload-preview"></div>
-                                <div class="modal-actions">
-                                    <button class="cancel-upload">Cancel</button>
-                                    <button class="confirm-upload">Upload Selected</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="admin-container" id="adminContainer" style="display: none;">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/images/logo.png" alt="Logo">
+                <h3>Matru Bhumi Admin</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#content"><i class="fas fa-file-alt"></i> Content Management</a></li>
+                <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events Management</a></li>
+                <li><a href="#gallery"><i class="fas fa-images"></i> Gallery Management</a></li>
+                <li><a href="#donations"><i class="fas fa-donate"></i> Donations</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></
