@@ -1,140 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matru Bhumi Vandana Trust - World's Largest Bharat Mata Temple</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    
-    <!-- Load header and footer using JavaScript -->
-    <script>
-        // Function to load HTML files
-        function loadHTML(elementId, filePath) {
-            fetch(filePath)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                    
-                    // Re-attach event listeners after loading
-                    if(filePath.includes('header.html')) {
-                        const menuToggle = document.getElementById('mobile-menu');
-                        const navList = document.querySelector('.nav-list');
-                        
-                        if(menuToggle && navList) {
-                            menuToggle.addEventListener('click', function() {
-                                this.classList.toggle('active');
-                                navList.classList.toggle('active');
-                                document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
-                            });
-                        }
-                    }
-                    
-                    // Load scripts after footer is loaded
-                    if(filePath.includes('footer.html')) {
-                        const script1 = document.createElement('script');
-                        script1.src = 'assets/js/main.js';
-                        document.body.appendChild(script1);
-                        
-                        const script2 = document.createElement('script');
-                        script2.src = 'assets/js/countdown.js';
-                        document.body.appendChild(script2);
-                    }
-                })
-                .catch(err => console.error('Error loading HTML:', err));
-        }
+<!--#include virtual="includes/header.html" -->
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <h2 class="hero-title">World's Biggest Temple of Bharat Mata</h2>
+                <p class="hero-subtitle">Under the "Matru Bhumi Vandna Trust" - Coming Soon</p>
+            </div>
+        </section>
         
-        // Load header and footer when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('header-container', 'includes/header.html');
-            loadHTML('footer-container', 'includes/footer.html');
-        });
-    </script>
-</head>
-<body>
-    <!-- Header will be loaded here -->
-    <div id="header-container"></div>
-
-    <!-- Main Content -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content slide-up">
-                <h1>World's Largest Temple of Bharat Mata</h1>
-                <p>Under the "Matru Bhumi Vandna Trust" - Coming Soon in Morbi, Gujarat</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="countdown-section">
-        <div class="container">
-            <h2>Janta Raja Natak 2025</h2>
-            <p>Starting from 2nd May 2025 at 8:00 PM till 8th May 2025</p>
-            
-            <div class="countdown-container" id="countdown-container">
-                <div class="countdown-box">
-                    <div class="countdown-value" id="countdown-days">00</div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="countdown-value" id="countdown-hours">00</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="countdown-value" id="countdown-minutes">00</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="countdown-value" id="countdown-seconds">00</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="patriots-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Great Patriots</h2>
-            </div>
-            
-            <div class="patriots-grid">
-                <div class="patriot-card">
-                    <div class="patriot-img">
-                        <img src="assets/images/patriots/shivaji-maharaj.jpg" alt="Shivaji Maharaj">
+        <section class="countdown-section">
+            <div class="container">
+                <h2 class="section-title">Janta Raja Natak 2025</h2>
+                <p class="event-date">2nd May 2025 to 8th May 2025</p>
+                
+                <div class="countdown-container">
+                    <div class="countdown-box">
+                        <span id="days">00</span>
+                        <p>Days</p>
                     </div>
-                    <div class="patriot-info">
-                        <h3>Shivaji Maharaj</h3>
-                        <p>The great Maratha warrior king who established Hindavi Swarajya</p>
+                    <div class="countdown-box">
+                        <span id="hours">00</span>
+                        <p>Hours</p>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="minutes">00</span>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="seconds">00</span>
+                        <p>Seconds</p>
                     </div>
                 </div>
                 
-                <div class="patriot-card">
-                    <div class="patriot-img">
-                        <img src="assets/images/patriots/rani-lakshmibai.jpg" alt="Rani Lakshmibai">
-                    </div>
-                    <div class="patriot-info">
-                        <h3>Rani Lakshmibai</h3>
-                        <p>The Queen of Jhansi who became a symbol of resistance against British rule</p>
-                    </div>
-                </div>
+                <a href="events.html" class="btn-primary">Event Details</a>
+            </div>
+        </section>
+        
+        <section class="patriots-section">
+            <div class="container">
+                <h2 class="section-title">Our Patriots</h2>
                 
-                <div class="patriot-card">
-                    <div class="patriot-img">
-                        <img src="assets/images/patriots/bhagat-singh.jpg" alt="Bhagat Singh">
+                <div class="patriots-grid">
+                    <div class="patriot-card">
+                        <div class="patriot-image">
+                            <img src="assets/images/patriots/patriot1.jpg" alt="Patriot 1">
+                        </div>
+                        <div class="patriot-info">
+                            <h3>Patriot Name 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                        </div>
                     </div>
-                    <div class="patriot-info">
-                        <h3>Bhagat Singh</h3>
-                        <p>Revolutionary freedom fighter who sacrificed his life for India's independence</p>
+                    
+                    <div class="patriot-card">
+                        <div class="patriot-image">
+                            <img src="assets/images/patriots/patriot2.jpg" alt="Patriot 2">
+                        </div>
+                        <div class="patriot-info">
+                            <h3>Patriot Name 2</h3>
+                            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="patriot-card">
+                        <div class="patriot-image">
+                            <img src="assets/images/patriots/patriot3.jpg" alt="Patriot 3">
+                        </div>
+                        <div class="patriot-info">
+                            <h3>Patriot Name 3</h3>
+                            <p>Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer will be loaded here -->
-    <div id="footer-container"></div>
-    
-    <!-- Donation Sticky Button (loaded with footer) -->
-</body>
-</html>
+<!--#include virtual="includes/footer.html" -->
