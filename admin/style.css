@@ -1,3 +1,4 @@
+/* Admin Panel Styles */
 :root {
     --primary-color: #5e2c04;
     --secondary-color: #800020;
@@ -10,19 +11,7 @@
     --transition: all 0.3s ease;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: var(--background-light);
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
+/* Admin Container */
 .admin-container {
     max-width: 100%;
     min-height: 100vh;
@@ -30,8 +19,10 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background-color: var(--background-light);
 }
 
+/* Login Form */
 .login-form {
     background-color: white;
     padding: 40px;
@@ -56,6 +47,7 @@ body {
     font-size: 1.8rem;
 }
 
+/* Form Elements */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -67,7 +59,9 @@ body {
     font-weight: 500;
 }
 
-.form-group input {
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
@@ -92,13 +86,14 @@ body {
     background-color: var(--primary-color);
 }
 
-/* Admin Dashboard Styles */
+/* Admin Dashboard */
 .admin-dashboard {
     display: flex;
     width: 100%;
     min-height: 100vh;
 }
 
+/* Sidebar */
 .admin-sidebar {
     width: 250px;
     background-color: var(--primary-color);
@@ -174,6 +169,7 @@ body {
     margin-right: 10px;
 }
 
+/* Main Content Area */
 .admin-content {
     flex: 1;
     background-color: #f5f5f5;
@@ -218,6 +214,7 @@ body {
     padding: 20px;
 }
 
+/* Dashboard Widgets */
 .dashboard-widgets {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -258,6 +255,7 @@ body {
     color: var(--primary-color);
 }
 
+/* Content Sections */
 .content-section {
     background-color: white;
     border-radius: 8px;
@@ -273,6 +271,7 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
+/* Editor Tabs */
 .editor-tabs {
     display: flex;
     border-bottom: 1px solid var(--border-color);
@@ -303,6 +302,7 @@ body {
     display: block;
 }
 
+/* Image Upload */
 .image-upload {
     margin-top: 10px;
 }
@@ -337,6 +337,31 @@ body {
     max-height: 100%;
 }
 
+.crop-tools {
+    margin-top: 10px;
+    display: none;
+}
+
+.crop-btn, .cancel-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.crop-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #f5f5f5;
+    color: #666;
+}
+
+/* Editor Actions */
 .editor-actions {
     margin-top: 20px;
     text-align: right;
@@ -370,6 +395,7 @@ body {
     background-color: #e0e0e0;
 }
 
+/* Events Management */
 .events-toolbar {
     display: flex;
     justify-content: space-between;
@@ -430,6 +456,7 @@ body {
     color: #155724;
 }
 
+/* Action Buttons */
 .edit-btn, .delete-btn {
     background: none;
     border: none;
@@ -447,6 +474,7 @@ body {
     color: #dc3545;
 }
 
+/* Gallery Management */
 .gallery-toolbar {
     display: flex;
     justify-content: space-between;
@@ -511,6 +539,7 @@ body {
     cursor: pointer;
 }
 
+/* Image Upload Modal */
 .image-upload-modal {
     position: fixed;
     top: 0;
@@ -518,7 +547,7 @@ body {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -629,6 +658,28 @@ body {
 
 .confirm-upload:hover {
     background-color: var(--primary-color);
+}
+
+/* Admin Modal */
+.admin-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.admin-modal .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
 }
 
 /* Responsive Styles */
