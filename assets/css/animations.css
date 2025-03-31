@@ -1,18 +1,13 @@
-/* Fade In Animation */
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-in both;
-}
-
-/* Slide Up Animation */
 @keyframes slideUp {
     from { 
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(20px);
     }
     to { 
         opacity: 1;
@@ -20,57 +15,32 @@
     }
 }
 
-.slide-up {
-    animation: slideUp 0.8s ease-out both;
-}
-
-/* Pulse Animation */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
-.pulse {
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+.pulse-animation {
     animation: pulse 2s infinite;
 }
 
-/* Bounce Animation */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-20px); }
-    60% { transform: translateY(-10px); }
-}
-
-.bounce {
-    animation: bounce 1s;
-}
-
-/* Rotate Animation */
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.rotate {
-    animation: rotate 2s linear infinite;
-}
-
-/* Menu Toggle Animation */
-.menu-toggle .bar {
-    transition: all 0.3s ease;
-}
-
-.menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+.bounce-animation {
+    animation: bounce 2s infinite;
 }
 
 /* Hover Effects */
@@ -82,81 +52,87 @@
     transform: scale(1.05);
 }
 
-.hover-shadow {
-    transition: box-shadow 0.3s ease;
-}
-
-.hover-shadow:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Button Hover Effect */
-.btn-hover {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-hover::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.5s;
-}
-
-.btn-hover:hover::after {
-    left: 100%;
-}
-
-/* Gallery Item Animation */
-.gallery-item .gallery-img {
-    transition: transform 0.5s ease;
-}
-
-.gallery-item .gallery-caption {
-    transition: transform 0.5s ease;
-}
-
-/* Donation Button Animation */
-.donate-btn {
-    transition: all 0.3s ease;
-}
-
-.donate-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Navbar Link Underline Animation */
-.nav-list a {
+.hover-underline {
     position: relative;
 }
 
-.nav-list a::after {
+.hover-underline::after {
     content: '';
     position: absolute;
+    bottom: -2px;
+    left: 0;
     width: 0;
     height: 2px;
-    bottom: 0;
-    left: 0;
     background-color: var(--accent-color);
     transition: width 0.3s ease;
 }
 
-.nav-list a:hover::after {
+.hover-underline:hover::after {
     width: 100%;
 }
 
-/* Timeline Animation */
-.timeline-item {
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+/* Button Hover Effects */
+.btn-hover-effect {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.timeline-item.visible {
+.btn-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btn-hover-effect:hover::before {
+    left: 100%;
+}
+
+/* Card Hover Effects */
+.card-hover-effect {
+    position: relative;
+}
+
+.card-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-hover-effect:hover::before {
+    opacity: 1;
+}
+
+/* Image Overlay Effect */
+.image-overlay {
+    position: relative;
+}
+
+.image-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-overlay:hover::after {
     opacity: 1;
 }
 
@@ -167,52 +143,34 @@
 }
 
 .loading-spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    border-top: 4px solid var(--secondary-color);
     width: 40px;
     height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--accent-color);
     animation: spin 1s linear infinite;
     margin: 20px auto;
 }
 
-/* Scroll Reveal Animation */
-.reveal {
-    position: relative;
-    opacity: 0;
-    transition: all 1s ease;
+/* Text Animation */
+.text-typing {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid var(--accent-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret 0.75s step-end infinite;
 }
 
-.reveal.active {
-    opacity: 1;
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
 
-.reveal.active.fade-left {
-    animation: fade-left 1s ease-in;
-}
-
-.reveal.active.fade-right {
-    animation: fade-right 1s ease-in;
-}
-
-@keyframes fade-left {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-right {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color); }
 }
